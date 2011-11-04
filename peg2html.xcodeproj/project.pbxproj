@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		62C965901462DA5100B4F603 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62C9658F1462DA5100B4F603 /* main.cpp */; };
 		62C965921462DA5100B4F603 /* peg2html.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 62C965911462DA5100B4F603 /* peg2html.1 */; };
+		62FF35AD1462DAB500A80931 /* PEGParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62FF35AB1462DAB500A80931 /* PEGParser.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		62C9658B1462DA5100B4F603 /* peg2html */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = peg2html; sourceTree = BUILT_PRODUCTS_DIR; };
 		62C9658F1462DA5100B4F603 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		62C965911462DA5100B4F603 /* peg2html.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = peg2html.1; sourceTree = "<group>"; };
+		62FF35AB1462DAB500A80931 /* PEGParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PEGParser.cpp; sourceTree = "<group>"; };
+		62FF35AC1462DAB500A80931 /* PEGParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEGParser.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,8 @@
 		62C9658E1462DA5100B4F603 /* peg2html */ = {
 			isa = PBXGroup;
 			children = (
+				62FF35AB1462DAB500A80931 /* PEGParser.cpp */,
+				62FF35AC1462DAB500A80931 /* PEGParser.h */,
 				62C9658F1462DA5100B4F603 /* main.cpp */,
 				62C965911462DA5100B4F603 /* peg2html.1 */,
 			);
@@ -117,6 +122,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62C965901462DA5100B4F603 /* main.cpp in Sources */,
+				62FF35AD1462DAB500A80931 /* PEGParser.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +177,7 @@
 		62C965961462DA5100B4F603 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = /opt/local/include;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -178,6 +185,7 @@
 		62C965971462DA5100B4F603 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = /opt/local/include;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -201,6 +209,7 @@
 				62C965971462DA5100B4F603 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
