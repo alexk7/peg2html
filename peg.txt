@@ -1,0 +1,38 @@
+# Hierarchical syntax
+Grammar    <= Spacing Definition+ EndOfFile
+Definition <= IDENTIFIER LEFTARROW Expression
+
+Expression <= Sequence (SLASH Sequence)*
+Sequence   <= Item*
+Item       <= (AND / NOT)? Primary (QUESTION / STAR / PLUS)?
+Primary    <= IDENTIFIER !LEFTARROW
+            / OPEN Expression CLOSE
+            / LITERAL / CLASS / DOT
+
+# Lexical syntax
+IDENTIFIER <- Identifier Spacing
+Identifier <= [a-zA-Z_][a-zA-Z0-9_]*
+
+LITERAL   <= ( ['] (!['] Char)* [']
+             / ["] (!["] Char)* ["] ) Spacing
+CLASS     <= '[' (!']' Range)* ']' Spacing
+Range     <= Char ('-' Char)?
+Char      <= '\\' ([nrt'"\[\]\\] / [1-9][0-9]*)
+           / !'\\' .
+
+LEFTARROW <= '<' ('-' / '=') Spacing
+SLASH     <- '/' Spacing
+AND       <- '&' Spacing
+NOT       <- '!' Spacing
+QUESTION  <- '?' Spacing
+STAR      <- '*' Spacing
+PLUS      <- '+' Spacing
+OPEN      <- '(' Spacing
+CLOSE     <- ')' Spacing
+DOT       <- '.' Spacing
+
+Spacing   <- (Space / Comment)*
+Comment   <- '#' (!EndOfLine .)* EndOfLine
+Space     <- ' ' / '\t' / EndOfLine
+EndOfLine <- '\n' / '\r' '\n'?
+EndOfFile <- !.
